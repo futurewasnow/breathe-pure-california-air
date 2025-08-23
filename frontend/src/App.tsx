@@ -8,7 +8,7 @@ import { seoConfig } from './utils/seo/seoConfig';
 import ScrollToTop from './components/ScrollToTop';
 import EnhancedLanding from './pages/EnhancedLanding';
 import Locations from './pages/Locations';
-import LocationDetail from './pages/LocationDetail.tsx'; // Import LocationDetail component
+import LocationDetail from './pages/LocationDetail.tsx';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -16,16 +16,18 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound';
 import IndustryPage from './pages/IndustryPage.tsx';
-import HealthBenefits from './pages/HealthBenefits'; // Import HealthBenefits component
+import HealthBenefits from './pages/HealthBenefits';
 import Quote from './pages/Quote';
-import DryerVentMaintenanceProgram from './pages/services/DryerVentMaintenanceProgram.tsx';
-import CommercialAirDuctCleaning from './pages/services/CommercialAirDuctCleaning.tsx';
-import ResidentialAirDuctCleaning from './pages/services/ResidentialAirDuctCleaning.tsx';
-import CommercialDryerVentCleaning from './pages/services/CommercialDryerVentCleaning.tsx';
-import ResidentialDryerVentCleaning from './pages/services/ResidentialDryerVentCleaning.tsx';
-import CommercialElectrostaticFilter from './pages/services/CommercialElectrostaticFilter.tsx';
-import ResidentialElectrostaticFilter from './pages/services/ResidentialElectrostaticFilter.tsx';
-import HVACSystemCleaning from './pages/services/HVACSystemCleaning.tsx';
+
+// Lazy load service pages for better performance
+const DryerVentMaintenanceProgram = React.lazy(() => import('./pages/services/DryerVentMaintenanceProgram.tsx'));
+const CommercialAirDuctCleaning = React.lazy(() => import('./pages/services/CommercialAirDuctCleaning.tsx'));
+const ResidentialAirDuctCleaning = React.lazy(() => import('./pages/services/ResidentialAirDuctCleaning.tsx'));
+const CommercialDryerVentCleaning = React.lazy(() => import('./pages/services/CommercialDryerVentCleaning.tsx'));
+const ResidentialDryerVentCleaning = React.lazy(() => import('./pages/services/ResidentialDryerVentCleaning.tsx'));
+const CommercialElectrostaticFilter = React.lazy(() => import('./pages/services/CommercialElectrostaticFilter.tsx'));
+const ResidentialElectrostaticFilter = React.lazy(() => import('./pages/services/ResidentialElectrostaticFilter.tsx'));
+const HVACSystemCleaning = React.lazy(() => import('./pages/services/HVACSystemCleaning.tsx'));
 
 // Create query client
 const queryClient = new QueryClient();
